@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.rainfall</groupId>
+  <artifactId>rainfall-site</artifactId>
+  <name>Rainfall-site</name>
+  <version>1.0.5-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.asciidoctor</groupId>
+        <artifactId>asciidoctor-maven-plugin</artifactId>
+        <version>1.5.2</version>
+        <executions>
+          <execution>
+            <id>rainfall-core</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>process-asciidoc</goal>
+            </goals>
+            <configuration>
+              <sourceDirectory>../Rainfall-core/src/main/doc</sourceDirectory>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>rainfall-ehcache</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>process-asciidoc</goal>
+            </goals>
+            <configuration>
+              <sourceDirectory>../Rainfall-ehcache/src/main/doc</sourceDirectory>
+            </configuration>
+          </execution>
+        </executions>
+
+        <configuration>
+          <outputDirectory>target/docs</outputDirectory>
+          <backend>html</backend>
+          <doctype>book</doctype>
+          <attributes>
+            <stylesheet>my-theme.css</stylesheet>
+          </attributes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
