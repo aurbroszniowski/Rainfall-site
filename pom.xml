@@ -7,7 +7,7 @@
   <groupId>io.rainfall</groupId>
   <artifactId>rainfall-site</artifactId>
   <name>Rainfall-site</name>
-  <version>1.0.5-SNAPSHOT</version>
+  <version>1.0.5</version>
   <packaging>jar</packaging>
 
   <build>
